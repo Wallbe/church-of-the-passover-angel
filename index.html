@@ -322,6 +322,19 @@
 					</div> <!-- .row -->
 
 					<p class="colophon">Copyright <span class="year-0"></span> Church of the Passover Angel. All right reserved</p>
+					<p style="color: #555; font-family: 'georgia', monospace; font-size: 14px; margin-top: 10px;">
+    You are visitor number <span id="hit-counter" style="color: #8a0303; font-weight: bold; letter-spacing: 2px;">084913</span> to learn the Truth.
+</p>
+
+<script>
+    let counterText = document.getElementById("hit-counter");
+    let cultists = 84913;
+
+    setInterval(function() {
+        cultists = cultists + Math.floor(Math.random() * 3) + 1; 
+        counterText.innerText = "0" + cultists; 
+    }, 3000); 
+</script>
 				</div><!-- .container -->
 			</footer> <!-- .site-footer -->
 
@@ -355,27 +368,5 @@
                 });
             });
         </script>
-		<!-- THE DISPLAY: This is the visible text -->
-<p style="text-align: center; color: #8a0303; font-family: 'Georgia'; margin-top: 40px; margin-bottom: 40px;">
-    You are visitor number <b id="hit-counter">084913</b> to learn the Truth.
-</p>
-
-<!-- THE MOTOR: This invisible script turns the gears -->
-<script>
-    // 1. Find the exact number on the page
-    let counterText = document.getElementById("hit-counter");
-    
-    // 2. Set our starting number of cultists
-    let cultists = 84913;
-
-    // 3. Wind up the motor to run every 3 seconds (3000 milliseconds)
-    setInterval(function() {
-        // Add a random number of new visitors (between 1 and 3)
-        cultists = cultists + Math.floor(Math.random() * 3) + 1; 
-        
-        // Push the new number to the screen, keeping the "0" at the front
-        counterText.innerText = "0" + cultists; 
-    }, 3000); 
-</script>
 	</body>
 </html>
