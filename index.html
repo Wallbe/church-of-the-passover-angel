@@ -52,6 +52,35 @@
     font-size: 18px !important;
     line-height: 1.6 !important;
   }
+			/* 1. THE FLASHLIGHT EFFECT (Vignette) */
+  /* This overlays a dark shadow around the edges of the screen */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(circle, transparent 50%, rgba(10, 10, 11, 0.9) 100%);
+    pointer-events: none; /* This ensures you can still click the buttons beneath the shadows! */
+    z-index: 9999;
+  }
+
+  /* 2. THE BLOODY HIGHLIGHTER (Custom Selection) */
+  /* This changes the color when a player clicks and drags over text */
+  ::selection {
+    background-color: #8a0303 !important; 
+    color: #e0d8c3 !important; 
+  }
+
+  /* 3. THE DYING GASLAMP (Flickering Headers) */
+  /* This applies a stuttering animation to the red titles */
+  h1, h2, h3 {
+    animation: flicker 5s infinite alternate;
+  }
+  
+  /* This is the math telling the bulb exactly when to drop its power */
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.3; }
+  }
 </style>
 	</head>
 	<body>
