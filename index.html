@@ -81,6 +81,30 @@
     0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
     20%, 24%, 55% { opacity: 0.3; }
   }
+			/* =========================================================
+     THIS IS THE BLOOD RAIN OVERLAY 
+     It lays your GIF over the top of the entire webpage!
+     ========================================================= */
+  body::after {
+    /* Step 1: Tell HTML to generate the ghost layer */
+    content: "";
+
+    /* Step 2: Lock the layer to the monitor screen, not the page */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+
+    /* Step 3: Load the red rain GIF and tell it to tile/repeat */
+    background-image: url('images/blood-rain.gif') !important; /* <--- MAKE SURE THIS FILENAME MATCHES! */
+    background-repeat: repeat !important; /* Tiles like bloody wallpaper */
+    background-position: top center !important;
+
+    /* Step 4: Lay it *ontop* of everything (massive z-index number) */
+    z-index: 9999 !important;
+
+    /* Step 5: Tell the computer 'pointer-events: none' to let clicks through! */
+    pointer-events: none !important;
+  }
 </style>
 	</head>
 	<body>
