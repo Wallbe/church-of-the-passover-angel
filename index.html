@@ -89,10 +89,14 @@
   .flip-clock-divider .flip-clock-label {
     color: #8a0303 !important; /* Rusty red */
   }
-			/* THE CURSOR TRAP: Turns the pointer into a red X over links */
+/* 1. Keeps the background cursor as a hostile crosshair */
+  body {
+    cursor: crosshair !important;
+  }
+
+  /* 2. Turns the cursor into a rusty Red X over links */
   a, a:hover {
-    /* Generates an SVG 'X' in the rusty red color (#8a0303) */
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M4 4 L20 20 M20 4 L4 20" stroke="%238a0303" stroke-width="4"/></svg>') 12 12, crosshair !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 4 L20 20 M20 4 L4 20' stroke='%238a0303' stroke-width='4'/%3E%3C/svg%3E") 12 12, crosshair !important;
   }
 </style>
 	</head>
