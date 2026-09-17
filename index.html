@@ -271,21 +271,19 @@
             $(document).ready(function(){
                 $(document).snow({ SnowImage: "images/floatingfrog.gif", Quantity: 20 });
 
-                // Countdown Timer
-                var start = new Date();
-                var daysToAdd = 37;
-
-                if (window.location.hash) {
-                    daysToAdd = parseInt(window.location.hash.split('#')[1]);
-                }
-
-                var end = new Date();
-                end.setDate(start.getDate() + daysToAdd);
-                // Set 4pm
-                end.setHours(16);
-                end.setMinutes(0);
-
-                var diff = Math.floor((end.getTime() - start.getTime())/1000);
+               // 1. Set your specific real-world deadline (Month DD, YYYY HH:MM:SS)
+    var deadline = new Date("October 24, 2026 16:00:00").getTime();
+    
+    // 2. Get the current time right now
+    var now = new Date().getTime();
+    
+    // 3. Calculate the remaining seconds
+    var diff = (deadline - now) / 1000;
+    
+    // 4. Prevent the clock from breaking if the date has already passed
+    if (diff < 0) { 
+        diff = 0; 
+    }
 
                 var clock = $('.countdown').FlipClock(diff, {
                     clockFace: 'DailyCounter',
