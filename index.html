@@ -98,6 +98,11 @@
   a, a:hover {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 4 L20 20 M20 4 L4 20' stroke='%238a0303' stroke-width='4'/%3E%3C/svg%3E") 12 12, crosshair !important;
   }
+			/* Forces the swarming locusts down to a creepy, realistic bug size */
+  img[src*="locust-dance"], div[id*="flake"] img, .snowflake img {
+    width: 18px !important; /* Adjust this number up or down if you want them smaller/larger */
+    height: auto !important;
+  }
 </style>
 	</head>
 	<body>
