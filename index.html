@@ -273,7 +273,7 @@
 
                 // Countdown Timer
                 var start = new Date();
-                var daysToAdd = 5;
+                var daysToAdd = 37;
 
                 if (window.location.hash) {
                     daysToAdd = parseInt(window.location.hash.split('#')[1]);
@@ -281,8 +281,8 @@
 
                 var end = new Date();
                 end.setDate(start.getDate() + daysToAdd);
-                // Set 8pm
-                end.setHours(20);
+                // Set 4pm
+                end.setHours(16);
                 end.setMinutes(0);
 
                 var diff = Math.floor((end.getTime() - start.getTime())/1000);
