@@ -1630,7 +1630,7 @@ ul.bullet {
   }
 
   /* 2. THE WALL BUMPERS: Forces text boxes to stay inside the screen lines */
-  .site-content, .container, .white-box-class-name {
+  .site-content, .container, panel-box {
     width: 100% !important;
     max-width: 100vw !important;
     box-sizing: border-box !important;
