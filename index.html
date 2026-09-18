@@ -114,6 +114,31 @@
     margin-bottom: -80px; /* Pulls the scripture text up into the empty gap */
   }
 }
+		@media (max-width: 600px) {
+  /* Hides the menu links by default on mobile until the button is clicked */
+  .main-navigation .menu {
+    display: none; 
+    background: #ffffff; /* Stark white to blend in */
+    padding: 15px;
+    border: 2px solid #8a0303; /* Harsh red border */
+    text-align: center;
+  }
+  
+  /* Forces the links to stack vertically and adds a separator */
+  .main-navigation .menu li {
+    display: block !important;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #8a0303;
+  }
+  
+  /* Removes the border from the very last link so it looks clean */
+  .main-navigation .menu li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}	
 }	
 </style>
 	</head>
@@ -396,5 +421,18 @@
                 });
             });
         </script>
+		<script>
+    // THE MENU WIRE: Connects the toggle button to the link list
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        let menuList = document.querySelector('.menu');
+        
+        // If the trapdoor is closed, open it. If it's open, slam it shut.
+        if (menuList.style.display === "block") {
+            menuList.style.display = "none";
+        } else {
+            menuList.style.display = "block";
+        }
+    });
+</script>
 	</body>
 </html>
