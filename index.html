@@ -287,46 +287,27 @@
 
 		</div>
 
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-        <script src="js/snow.js"></script>
-        <script src="js/flipclock.min.js"></script>
-		<script src="js/app.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(document).snow({ SnowImage: "images/locust-dance.gif", Quantity: 20 });
-
-               // 1. Set your specific real-world deadline (Month DD, YYYY HH:MM:SS)
-    var deadline = new Date("October 24, 2026 16:00:00").getTime();
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+	<script src="js/snow.js"></script>
+    <script src="js/flipclock.min.js"></script>
+   	<script src="js/app.js"></script>
     
-    // 2. Get the current time right now
-    var now = new Date().getTime();
-    
-    // 3. Calculate the remaining seconds
-    var diff = (deadline - now) / 1000;
-    
-    // 4. Prevent the clock from breaking if the date has already passed
-    if (diff < 0) { 
-        diff = 0; 
-    }
-
-                var clock = $('.countdown').FlipClock(diff, {
-                    clockFace: 'DailyCounter',
-                    countdown: true,
-                });
-            });
-        </script>
-		<script>
-    // THE MENU WIRE: Connects the toggle button to the link list
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        let menuList = document.querySelector('.menu');
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).snow({ SnowImage: "images/locust-dance.gif", Quantity: 20 });
+        });
         
-        // If the trapdoor is closed, open it. If it's open, slam it shut.
-        if (menuList.style.display === "block") {
-            menuList.style.display = "none";
-        } else {
-            menuList.style.display = "block";
-        }
-    });
-</script>
-	</body>
+        // Your clock math stays here because it's specific to this exact page
+        var deadline = new Date("October 24, 2026 16:00:00").getTime();
+        var now = new Date().getTime();
+        var diff = (deadline - now) / 1000;
+        
+        if (diff < 0) { diff = 0; }
+        
+        var clock = $('.countdown').FlipClock(diff, {
+            clockFace: 'DailyCounter',
+            countdown: true
+        });
+    </script>
+</body>
 </html>
