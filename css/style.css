@@ -82,6 +82,12 @@
     margin-bottom: 50px !important; 
     display: inline-block !important; 
 }
+/* THE BLOOD INK: Overrides parchment color inside the sermon panels */
+.panel-body,
+.panel-body p,
+.panel-body i {
+    color: #8a0303 !important;
+}
 article,
 aside,
 details,
