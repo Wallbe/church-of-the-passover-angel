@@ -1659,4 +1659,18 @@ ul.bullet {
     white-space: nowrap !important;
     text-align: right;
   }
+	/* 4. THE WELDING TORCH: Locks the inner text and the year box into a single unbreakable row */
+  .event-meta > span {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    align-items: baseline !important;
+    white-space: nowrap !important;
+  }
+
+  /* 5. THE YEAR ANCHOR: Stops the year from dropping through the floor */
+  .event-meta .year-0 {
+    display: inline-block !important;
+    margin-left: 4px; /* Puts a tiny gap between the month and the year */
+    line-height: 1 !important;
+  }
 }
