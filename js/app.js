@@ -22,3 +22,13 @@
   		ga('send', 'pageview');
 	});
 })(jQuery, document, window);
+
+// THE MASTER MENU WIRE
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    let menuList = document.querySelector('.menu');
+    if (menuList.style.display === "block") {
+        menuList.style.display = "none";
+    } else {
+        menuList.style.display = "block";
+    }
+});
