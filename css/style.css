@@ -1643,4 +1643,16 @@ ul.bullet {
   ul, li, .ways-to-prepare-list {
     word-break: break-word;
   }
+	/* THE DATE SUPERGLUE: Locks the month and year on one line */
+  .event-meta {
+    white-space: nowrap !important;
+    min-width: 90px !important; /* Protects its personal space */
+    text-align: right; 
+  }
+
+  /* THE TITLE CRUMPLE ZONE: Lets the title wrap instead of crushing the date */
+  .event-title {
+    word-break: break-word;
+    margin-right: 10px; /* Keeps the title from touching the date */
+  }
 }
