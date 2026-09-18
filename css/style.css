@@ -1638,21 +1638,25 @@ ul.bullet {
     padding-right: 15px !important;
     overflow-x: hidden;
   }
-
-  /* 3. THE LIST FIXER: Gives your dates room to breathe */
-  ul, li, .ways-to-prepare-list {
-    word-break: break-word;
-  }
-	/* THE DATE SUPERGLUE: Locks the month and year on one line */
-  .event-meta {
-    white-space: nowrap !important;
-    min-width: 90px !important; /* Protects its personal space */
-    text-align: right; 
+/* 1. THE ROW: Forces the title and date to stay side-by-side */
+  .event-list a {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
   }
 
-  /* THE TITLE CRUMPLE ZONE: Lets the title wrap instead of crushing the date */
+  /* 2. THE CRUMPLE ZONE: Tells the title it MUST absorb the squeeze */
   .event-title {
-    word-break: break-word;
-    margin-right: 10px; /* Keeps the title from touching the date */
+    flex: 1 1 auto !important; 
+    word-break: break-word !important;
+    margin-right: 15px !important; /* Keeps it from touching the date */
+  }
+
+  /* 3. THE IMMOVABLE OBJECT: Tells the outer AND inner date boxes to never shrink */
+  .event-meta, .event-meta span {
+    flex: 0 0 auto !important; /* Zero shrinking allowed */
+    white-space: nowrap !important;
+    text-align: right;
   }
 }
