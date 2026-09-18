@@ -103,20 +103,17 @@
     width: 25px !important; /* Adjust this number up or down if you want them smaller/larger */
     height: auto !important;
   }
-		/* MOBILE TRIPWIRE: Shrinks the flip-clock on small screens */
+/* MOBILE TRIPWIRE: Forces the flip-clock wide, then shrinks it */
 @media (max-width: 600px) {
   .mobile-clock-fix {
-    transform: scale(0.55); 
+    width: 620px !important; /* Forces the box to be wide enough to hold the whole clock */
+    max-width: none !important;
+    transform: scale(0.55); /* Shrinks the now-horizontal clock to 55% size */
     transform-origin: top center;
-    display: flex !important;
-    justify-content: center;
-    flex-wrap: nowrap !important;
+    margin-left: calc(50% - 310px) !important; /* Perfectly centers the wide box on a narrow phone screen */
+    margin-bottom: -80px; /* Pulls the scripture text up into the empty gap */
   }
-  
-  /* Forces the individual clock items to stay in a row */
-  .mobile-clock-fix > div {
-    display: inline-block !important; 
-  }
+}
 }	
 </style>
 	</head>
