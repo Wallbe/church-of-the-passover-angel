@@ -7,6 +7,75 @@
 /*=========================================== 
  * Importing CSS Libraries
  *===========================================*/
+ /* This changes the main background and default text */
+  body {
+    background-color: #1a1a1b !important; /* Deep charcoal almost-black */
+    color: #e0d8c3 !important; /* Old parchment paper off-white */
+    font-family: "Georgia", serif !important; /* Gives it an older, biblical feel */
+	cursor: crosshair !important;
+  }
+
+  /* This turns the links and navigation menu a rusty blood red */
+  a, .main-navigation a {
+    color: #8a0303 !important; 
+  }
+
+  /* This makes the main headers red and a bit more ominous */
+  h1, h2, h3, h4 {
+    color: #8a0303 !important;
+    letter-spacing: 2px !important; /* Spaces the letters out to look creepier */
+  }
+
+  /* This gives the central biblical quote a bit more breathing room and size */
+ /* THE MANIFESTO FONT: Makes the body text look frantically typed */
+  p, {
+    font-family: "Georgia", serif, monospace !important;
+    font-size: 16px !important; /* Courier is wider, so dropping the size slightly keeps it readable */
+    line-height: 1.6 !important;
+    color: #e0d8c3 !important; /* Keeps that old parchment paper color */
+  }
+			/* 1. THE FLASHLIGHT EFFECT (Vignette) */
+  /* This overlays a dark shadow around the edges of the screen */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(circle, transparent 50%, rgba(10, 10, 11, 0.9) 100%);
+    pointer-events: none; /* This ensures you can still click the buttons beneath the shadows! */
+    z-index: 9999;
+  }
+
+  /* 2. THE BLOODY HIGHLIGHTER (Custom Selection) */
+  /* This changes the color when a player clicks and drags over text */
+  ::selection {
+    background-color: #8a0303 !important; 
+    color: #e0d8c3 !important; 
+  }
+
+  /* 3. THE DYING GASLAMP (Flickering Headers) */
+  /* This applies a stuttering animation to the red titles */
+  h1, h2, h3 {
+    animation: flicker 5s infinite alternate;
+  }
+  
+  /* This is the math telling the bulb exactly when to drop its power */
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.3; }
+  }
+			/* Repaints the Days/Hours/Minutes/Seconds labels */
+  .flip-clock-divider .flip-clock-label {
+    color: #8a0303 !important; /* Rusty red */
+  }
+/* 1. Keeps the background cursor as a hostile crosshair */
+  body {
+    cursor: crosshair !important;
+  }
+
+  /* 2. Turns the cursor into a rusty Red X over links */
+  a, a:hover {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 4 L20 20 M20 4 L4 20' stroke='%238a0303' stroke-width='4'/%3E%3C/svg%3E") 12 12, crosshair !important;
+  }
 article,
 aside,
 details,
